@@ -49,3 +49,5 @@ Detection Dataset are avaialble in this Google Drive: FIXMEE!!!!!!!!
 ## StarCraft II
 - 
 
+## Detection Model
+- please follow the pdf thesis in the folder 
