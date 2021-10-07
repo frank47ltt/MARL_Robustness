@@ -47,7 +47,10 @@ Detection Dataset are avaialble in this Google Drive: FIXMEE!!!!!!!!
 - attack rate can be specified by variable `attack_rate`, range from 0 to 1
 
 ## StarCraft II
-- 
+- to install the environment, please refer back to StarCraft II's original GitHub for installment procedure in different operating system
+- attack name
+- attack rate
+- white box/black box
 
 ## Detection Model
 - please follow the pdf thesis in the folder 
