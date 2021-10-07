@@ -17,9 +17,6 @@ from DDPG import DDPG
 
 from scipy.special import softmax
 
-import wandb
-wandb.login(key="31f9bb0422ea27ec810d5dec18c37da85e0972b7")
-wandb.init(name='AIRL', project="counterfactual_based_attack")
 
 # global variables for DDPG
 
@@ -358,7 +355,6 @@ def train(arglist):
                         train_step, len(episode_rewards), np.mean(episode_rewards[-arglist.save_rate:]),
                         round(time.time() - t_start, 3)))
                     print("good reward is {}".format(np.mean(reward_good[-arglist.save_rate:])))
-                    wandb.log({'Reward for Good Agents': np.mean(reward_good[-arglist.save_rate:])})
                     rew_sum += np.mean(reward_good[-arglist.save_rate:])
                     counter += 1
                     print("Average Occupied Landmarks: {}".format(sum(avg_occ_landmarks) / len(avg_occ_landmarks)))
