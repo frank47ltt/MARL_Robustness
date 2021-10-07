@@ -20,7 +20,7 @@ AIRL: https://github.com/yangmuzhi/airl
 
 Qmix on STARCRAFT II: https://github.com/deepmind/pysc2
 
-Detection Dataset are avaialble in this Google Drive: FIXMEE!!!!!!!!
+Detection Dataset are avaialble in this Google Drive: https://drive.google.com/drive/folders/1SRMVebd8F0T5a51FYNhoBKrsNI25l2E6?usp=sharing
 
 ## Directories Structure
 - `./Attacks for MADDPG/` contains code for all attacks in cooeprative navigation and physical deception
