@@ -34,8 +34,6 @@ BATCH_SIZE = 32
 RENDER = False
 
 
-# ENV_NAME = 'Pendulum-v0'
-
 ###############################  DDPG  ####################################
 
 
@@ -312,19 +310,6 @@ def train(arglist):
             # increment global step counter
             train_step += 1
 
-            # for benchmarking learned policies
-            """
-            if arglist.benchmark:
-                for i, info in enumerate(info_n):
-                    agent_info[-1][i].append(info_n['n'])
-                if train_step > arglist.benchmark_iters and (done or terminal):
-                    file_name = arglist.benchmark_dir + arglist.exp_name + '.pkl'
-                    print('Finished benchmarking, now saving...')
-                    with open(file_name, 'wb') as fp:
-                        pickle.dump(agent_info[:-1], fp)
-                    break
-                continue
-            """
             # for displaying learned policies
             if arglist.display:
                 time.sleep(0.1)
@@ -369,12 +354,10 @@ def train(arglist):
             # saves final episode reward for plotting training curve later
             if len(episode_rewards) > arglist.num_episodes:
                 print("final ans is " + str(rew_sum / counter))
-
-                """
                 print("Saving final transitions")
                 print(np.array(transition).shape)
                 np.save('CN_ZS_WB_100_train', transition)
-                """
+                
 
                 rew_file_name = arglist.plots_dir + arglist.exp_name + '_rewards.pkl'
                 with open(rew_file_name, 'wb') as fp:
