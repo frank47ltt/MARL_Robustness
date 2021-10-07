@@ -343,7 +343,6 @@ def train(arglist):
                 print("episode reward for DDPG agent: {}".format(DDPG_ep_rw / arglist.save_rate))
                 DDPG_ep_rw = 0
                 print("AIRL DDPG bb agent reward: {}".format(np.mean(ep_rew)))
-                wandb.log({'Reward for AIRL': np.mean(ep_rew)})
                 U.save_state(arglist.save_dir, saver=saver)
 
                 if not loaded:
