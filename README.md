@@ -42,4 +42,9 @@ Detection Dataset are avaialble in this Google Drive: FIXMEE!!!!!!!!
 - Adv: stands for zero-sum attack
 - all trained weights are availble in corresponding folders
 - For example: if you want to run counterfactual, blackbox, in cooperative navigation, you should type
-`python train_PPO_CF_KL_CN_blackbox.py --scenario simple_spread'
+`python train_PPO_CF_KL_CN_blackbox.py --scenario simple_spread`
+- attack rate can be specified by variable `attack_rate`, range from 0 to 1
+
+## StarCraft II
+- 
+
