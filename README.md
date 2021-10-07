@@ -21,3 +21,16 @@ AIRL: https://github.com/yangmuzhi/airl
 Qmix on STARCRAFT II: https://github.com/deepmind/pysc2
 
 Detection Dataset are avaialble in this Google Drive: FIXMEE!!!!!!!!
+
+## Directories Structure
+- `./Attacks for MADDPG/` contains code for all attacks in cooeprative navigation and physical deception
+- `./Attacks for Qmix/` contains code for all attacks in StarCraft II
+- `./MARL_Detection/` contains code for the detection model and FGSM attack
+- `./Demo Video/` contains the visualization of the attack in different environments
+
+## Cooperative Navigation and Physical Deception
+### Randomly-timed attack & Strategically-timed attack
+
+(For Joe)
+
+### Counterfactual attack & Zero-sum attack
