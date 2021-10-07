@@ -6,7 +6,6 @@ import time
 import pickle
 import copy
 
-
 import maddpg.common.tf_util as U
 from maddpg.trainer.maddpg import MADDPGAgentTrainer
 import tensorflow.contrib.layers as layers
@@ -445,20 +444,6 @@ def train(arglist):
             # increment global step counter
             train_step += 1
 
-            """
-            # for benchmarking learned policies
-            if arglist.benchmark:
-                for i, info in enumerate(info_n):
-                    agent_info[-1][i].append(info_n['n'])
-                if train_step > arglist.benchmark_iters and (done or terminal):
-                    file_name = arglist.benchmark_dir + arglist.exp_name + '.pkl'
-                    print('Finished benchmarking, now saving...')
-                    with open(file_name, 'wb') as fp:
-                        pickle.dump(agent_info[:-1], fp)
-                    break
-                continue
-            """
-
             # for displaying learned policies
             if arglist.display:
                 time.sleep(0.1)
@@ -509,8 +494,6 @@ def train(arglist):
                 print("Saving final transitions")
                 print(np.array(transition).shape)
                 np.save('PD_CF_BB_100_train', transition)
-
-
 
                 rew_file_name = arglist.plots_dir + arglist.exp_name + '_rewards.pkl'
                 with open(rew_file_name, 'wb') as fp:
