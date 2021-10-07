@@ -3,7 +3,7 @@ This is the code for paper Advanced Persistent Threat in Cooperative Multi-Agent
 
 **Note**: Environments include requirements.txt file in each folder. 
 
-In order to install virtual environments, 'cd' into the corresponding directories and type 'pip install -r requirements.txt'
+In order to install virtual environments, `cd` into the corresponding directories and type `pip install -r requirements.txt`
 
 This project utilized the following GitHub as referenced, and if encountered any problem regarding installment of the environment, user should follow the corresponding GitHub in the following: 
 
