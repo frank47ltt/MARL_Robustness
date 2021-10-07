@@ -30,7 +30,16 @@ Detection Dataset are avaialble in this Google Drive: FIXMEE!!!!!!!!
 
 ## Cooperative Navigation and Physical Deception
 ### Randomly-timed attack & Strategically-timed attack
-
+- code are available in `./experiments/predicted_agent_0_attacks.py
 (For Joe)
 
 ### Counterfactual attack & Zero-sum attack
+- packages and dependencies are available in requirements.txt
+- all code for attacks are in the folder `./experiments/`
+- CN: stands for cooeprative navigation
+- PD: stands for physical deception (simple adversary)
+- KL: stands for counterfactual attack (simple spread)
+- Adv: stands for zero-sum attack
+- all trained weights are availble in corresponding folders
+- For example: if you want to run counterfactual, blackbox, in cooperative navigation, you should type
+`python train_PPO_CF_KL_CN_blackbox.py --scenario simple_spread'
