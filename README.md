@@ -45,6 +45,9 @@ Detection Dataset are avaialble in this Google Drive: FIXMEE!!!!!!!!
 - For example: if you want to run counterfactual, blackbox, in cooperative navigation, you should type
 `python train_PPO_CF_KL_CN_blackbox.py --scenario simple_spread`
 - attack rate can be specified by variable `attack_rate`, range from 0 to 1
+- For PPO, please go back to `PPO.py` to change the state dimension
+- 23 for CN (18 + 5)
+- 15 for PD (15 + 5)
 
 ## StarCraft II
 - to install the StarCraft II game, please refer back to StarCraft II's original GitHub for installment procedure in different operating system
