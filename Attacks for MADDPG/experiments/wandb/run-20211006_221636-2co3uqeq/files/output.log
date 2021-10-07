@@ -1,0 +1,55 @@
+Using good policy maddpg and adv policy maddpg
+Loading previous state...
+WARNING:tensorflow:From C:\Users\liut18\Desktop\maddpg\maddpg\common\tf_util.py:163: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+WARNING:tensorflow:From C:\Users\liut18\Desktop\maddpg\maddpg\trainer\maddpg.py:129: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+WARNING:tensorflow:From C:\Users\liut18\Desktop\maddpg\venv\lib\site-packages\tensorflow_core\contrib\layers\python\layers\layers.py:1866: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+WARNING:tensorflow:From C:\Users\liut18\Desktop\maddpg\venv\lib\site-packages\tensorflow_core\python\ops\clip_ops.py:172: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+## New start!
+loading-------------------------------------------------------------
+Starting iterations...
+WARNING:tensorflow:From C:\Users\liut18\Desktop\maddpg\experiments\algo\airl_discriminator.py:36: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+WARNING:tensorflow:From C:\Users\liut18\Desktop\maddpg\experiments\algo\airl_discriminator.py:26: The name tf.losses.log_loss is deprecated. Please use tf.compat.v1.losses.log_loss instead.
+WARNING:tensorflow:From C:\Users\liut18\Desktop\maddpg\venv\lib\site-packages\tensorflow_core\python\training\moving_averages.py:434: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+episode reward for DDPG agent: -1.2000382786989212
+steps: 4975, episodes: 200, mean episode reward: -0.14781895725891547, time: 7.212
+good reward is 13.005558247833408
+Avg best coop dist to target 0.23643290905696232
+episode reward for DDPG agent: 0.34282613813877105
+steps: 9975, episodes: 400, mean episode reward: -0.7838607415759685, time: 6.26
+good reward is 11.49062567649293
+Avg best coop dist to target 0.23549892054666188
+episode reward for DDPG agent: -0.40090269029140474
+steps: 14975, episodes: 600, mean episode reward: 1.105574009668115, time: 6.19
+good reward is 13.708576326748403
+Avg best coop dist to target 0.22360089268965538
+episode reward for DDPG agent: -0.2641155391931534
+steps: 19975, episodes: 800, mean episode reward: 0.8861419730101653, time: 6.274
+good reward is 14.115193826424122
+Avg best coop dist to target 0.21980155896885792
+episode reward for DDPG agent: -0.2416086658835411
+steps: 24975, episodes: 1000, mean episode reward: 1.256332954689426, time: 6.228
+good reward is 14.408789835874295
+Avg best coop dist to target 0.21297813200273571
+episode reward for DDPG agent: 1.0753956350684166
+steps: 29975, episodes: 1200, mean episode reward: -0.6374650169859959, time: 9.767
+good reward is 12.426362431662483
+Avg best coop dist to target 0.21669389582589718
+episode reward for DDPG agent: -0.3137876525521278
+steps: 34975, episodes: 1400, mean episode reward: 1.0894945951967931, time: 8.968
+good reward is 14.027365327114913
+Avg best coop dist to target 0.21258497825368275
+final is 13.311781667450079
+Traceback (most recent call last):
+  File "C:/Users/liut18/Desktop/maddpg/experiments/train_DDPG_Adv_Policy_PD_Blackbox.py", line 386, in <module>
+    train(arglist)
+  File "C:/Users/liut18/Desktop/maddpg/experiments/train_DDPG_Adv_Policy_PD_Blackbox.py", line 374, in train
+    rew_file_name = arglist.plots_dir + arglist.exp_name + '_rewards.pkl'
+TypeError: must be str, not NoneType
