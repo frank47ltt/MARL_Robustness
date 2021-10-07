@@ -47,10 +47,17 @@ Detection Dataset are avaialble in this Google Drive: FIXMEE!!!!!!!!
 - attack rate can be specified by variable `attack_rate`, range from 0 to 1
 
 ## StarCraft II
-- to install the environment, please refer back to StarCraft II's original GitHub for installment procedure in different operating system
-- attack name
-- attack rate
-- white box/black box
+- to install the StarCraft II game, please refer back to StarCraft II's original GitHub for installment procedure in different operating system
+- to install the dependency, please check the requirements.txt
+- all implementations are in `rollout.py` under function`generate_episode()`
+- attack name can be changed in `main.py` using variable args.attack_name:
+- `'inverse_glob' for zero sum`
+- `'counterfactual_RL' for counterfactual`
+- `'strategic' for strategic`
+- `'random' for random`
+- attack rate can be specified in `rollout.py` using variable name `attack_rate`
+- white box/black box can be specified in arguments.py under white_box (True for WB, False for BB)
+- other important output info can be found in `runner.py` under function `evaluate()`
 
 ## Detection Model
 - please follow the pdf thesis in the folder 
