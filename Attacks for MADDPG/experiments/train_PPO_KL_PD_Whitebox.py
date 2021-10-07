@@ -5,9 +5,6 @@ import time
 import pickle
 import copy
 
-
-
-
 import maddpg.common.tf_util as U
 from maddpg.trainer.maddpg import MADDPGAgentTrainer
 import tensorflow.contrib.layers as layers
@@ -41,8 +38,6 @@ METHOD = [
 
 
 ###############################  PPO  ####################################
-
-
 
 def parse_args():
     parser = argparse.ArgumentParser("Reinforcement Learning experiments for multiagent environments")
@@ -133,8 +128,6 @@ def train(arglist):
 
         U.initialize()
 
-
-
         # Create agent trainers
         obs_shape_n = [env.observation_space[i].shape for i in range(env.n)]
         num_adversaries = min(env.n, arglist.num_adversaries)
@@ -159,7 +152,6 @@ def train(arglist):
         saver = tf.train.Saver()
         obs_n = env.reset()
         
-
         loaded = True  # load previously trained weight
         attack_rate = 1.0  # attack threshold
         counter = 1   # counter to help final average
@@ -302,20 +294,6 @@ def train(arglist):
 
             # increment global step counter
             train_step += 1
-
-            """
-            # for benchmarking learned policies
-            if arglist.benchmark:
-                for i, info in enumerate(info_n):
-                    agent_info[-1][i].append(info_n['n'])
-                if train_step > arglist.benchmark_iters and (done or terminal):
-                    file_name = arglist.benchmark_dir + arglist.exp_name + '.pkl'
-                    print('Finished benchmarking, now saving...')
-                    with open(file_name, 'wb') as fp:
-                        pickle.dump(agent_info[:-1], fp)
-                    break
-                continue
-            """
 
             # for displaying learned policies
             if arglist.display:
