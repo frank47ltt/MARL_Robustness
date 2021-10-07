@@ -31,13 +31,15 @@ Detection Dataset are avaialble in this Google Drive: https://drive.google.com/d
 ## Cooperative Navigation and Physical Deception
 ### Randomly-timed attack & Strategically-timed attack
 - code are available in `./experiments/predicted_agent_0_attacks.py`
-
-**(For Joe)**
+- Whitebox, blackbox, random and strategically-timed attacks can be performed for cooperative navigation and physical deception from the 'attack' function in predicted_agent_0_attacks.py
+- Parameters threshold, attack_rate, random, and black_box control which attack is run.
+- threshold is the threshold of c(s_t) for the strategically timed attack
+- To run cooperative navigation, set the flag --scenario=simple_spread. For physical deception, set --scenario=simple_adversary
 
 ### Counterfactual attack & Zero-sum attack
 - packages and dependencies are available in requirements.txt
 - all code for attacks are in the folder `./experiments/`
-- CN: stands for cooeprative navigation
+- CN: stands for cooperative navigation
 - PD: stands for physical deception (simple adversary)
 - KL: stands for counterfactual attack (simple spread)
 - Adv: stands for zero-sum attack
