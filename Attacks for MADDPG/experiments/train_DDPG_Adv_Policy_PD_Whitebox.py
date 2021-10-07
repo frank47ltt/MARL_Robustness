@@ -29,7 +29,6 @@ MEMORY_CAPACITY = 10000
 BATCH_SIZE = 32
 
 RENDER = False
-# ENV_NAME = 'Pendulum-v0'
 
 ###############################  DDPG  ####################################
 
@@ -124,8 +123,6 @@ def train(arglist):
         t1 = time.time()
 
         ##################### DDPG #######################
-
-
         
         # Initialize
         U.initialize()
@@ -149,8 +146,6 @@ def train(arglist):
         attack_rate = 1
         coop_dist = 0
         avg_coop_dist = []
-
-
 
         ddpg = DDPG(a_dim, s_dim, a_bound)   # define DDPG policy trainer here
         U.initialize()
@@ -259,19 +254,6 @@ def train(arglist):
 
             # increment global step counter
             train_step += 1
-            """
-            # for benchmarking learned policies
-            if arglist.benchmark:
-                for i, info in enumerate(info_n):
-                    agent_info[-1][i].append(info_n['n'])
-                if train_step > arglist.benchmark_iters and (done or terminal):
-                    file_name = arglist.benchmark_dir + arglist.exp_name + '.pkl'
-                    print('Finished benchmarking, now saving...')
-                    with open(file_name, 'wb') as fp:
-                        pickle.dump(agent_info[:-1], fp)
-                    break
-                continue
-            """
 
             # for displaying learned policies
             if arglist.display:
