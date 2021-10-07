@@ -124,8 +124,6 @@ def train(arglist):
         t1 = time.time()
 
         ##################### DDPG #######################
-
-
         
         # Initialize
         U.initialize()
@@ -137,8 +135,6 @@ def train(arglist):
             print('Loading previous state...')
             U.load_state(arglist.load_dir)
 
-
-        print("I am here")
         episode_rewards = [0.0]  # sum of rewards for all agents
         agent_rewards = [[0.0] for _ in range(env.n)]  # individual agent reward
         final_ep_rewards = []  # sum of rewards for training curve
@@ -200,18 +196,11 @@ def train(arglist):
             if np.random.random() < attack_rate:
                 action_n[2] = DDPG_act  # compromised agent attack
                 label = 1
-                
 
             new_obs_n, rew_n, done_n, info_n = env.step(action_n)
             
             occ_landmarks += info_n['n'][0][3]
 
-            """
-            DDPG_reward version 1: = -rew_n[2]
-            DDPG_reward version 2: = -np.sum(rew_n)
-            """
-            
-            
             #DDPG_rew = -rew_n[2] * 2
             reward_good[-1] += rew_n[1]
 
@@ -273,20 +262,6 @@ def train(arglist):
             # increment global step counter
             train_step += 1
 
-            # for benchmarking learned policies
-            """
-            if arglist.benchmark:
-                for i, info in enumerate(info_n):
-                    agent_info[-1][i].append(info_n['n'])
-                if train_step > arglist.benchmark_iters and (done or terminal):
-                    file_name = arglist.benchmark_dir + arglist.exp_name + '.pkl'
-                    print('Finished benchmarking, now saving...')
-                    with open(file_name, 'wb') as fp:
-                        pickle.dump(agent_info[:-1], fp)
-                    break
-                continue
-            """
-
             # for displaying learned policies
             if arglist.display:
                 time.sleep(0.1)
@@ -307,7 +282,6 @@ def train(arglist):
                 DDPG_ep_rw = 0
 
                 U.save_state(arglist.save_dir, saver=saver)
-
 
                 if not loaded:
                     saver_DDPG.save(marl_sess, './weights_DDPG_Adv_CN_save/')
