@@ -33,8 +33,6 @@ BATCH_SIZE = 32
 RENDER = False
 
 
-# ENV_NAME = 'Pendulum-v0'
-
 ###############################  DDPG  ####################################
 
 
@@ -216,7 +214,6 @@ def train(arglist):
                                                                 obs_n)]  # (3,5), three agent, each with a probability distribution of action #NONE, UP, DOWN, LEFT, RIGHT
             # environment step
             DDPG_act = ddpg.choose_action(DDPG_obs)
-            # get DDPG action (agent 3)
 
             ###### modified MADDPG env with output of DDPG network #####
 
@@ -246,7 +243,6 @@ def train(arglist):
 
             DDPG_new_obs = np.append(new_obs_n[2], [action_taken_0, action_taken_1])
             ddpg.store_transition(DDPG_obs, DDPG_act, DDPG_rew, DDPG_new_obs)
-
             # transition appending
             o = np.concatenate(obs_n).ravel()
             o_next = np.concatenate(new_obs_n).ravel()
@@ -304,19 +300,6 @@ def train(arglist):
 
             # increment global step counter
             train_step += 1
-            """
-            # for benchmarking learned policies
-            if arglist.benchmark:
-                for i, info in enumerate(info_n):
-                    agent_info[-1][i].append(info_n['n'])
-                if train_step > arglist.benchmark_iters and (done or terminal):
-                    file_name = arglist.benchmark_dir + arglist.exp_name + '.pkl'
-                    print('Finished benchmarking, now saving...')
-                    with open(file_name, 'wb') as fp:
-                        pickle.dump(agent_info[:-1], fp)
-                    break
-                continue
-            """
 
             # for displaying learned policies
             if arglist.display:
@@ -361,11 +344,11 @@ def train(arglist):
             # saves final episode reward for plotting training curve later
             if len(episode_rewards) > arglist.num_episodes:
                 print("final is " + str(rew_sum / counter))
-                """
+                
                 print("Saving final transitions")
                 print(np.array(transition).shape)
                 np.save('PD_ZS_WB_100_train', transition)
-                """
+                
 
                 rew_file_name = arglist.plots_dir + arglist.exp_name + '_rewards.pkl'
                 with open(rew_file_name, 'wb') as fp:
