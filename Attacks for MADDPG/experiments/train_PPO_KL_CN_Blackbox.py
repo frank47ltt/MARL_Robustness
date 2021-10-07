@@ -314,9 +314,6 @@ def train(arglist):
             if np.random.random() < attack_rate:
                 attack_action_n[2] = PPO_act  # compromised agent attack
 
-        
-
-
             if np.random.random() < attack_rate:
                 #attack
                 num_attack += 1
@@ -388,28 +385,6 @@ def train(arglist):
             # transition.append((o, a_n[controlled_agent], o_next, label))
             transition.append((o, action_0, action_1, action_2, o_next, label))  
 
-
-
-            """
-            agent 0 = (8,) 
-            agent 1 = (10,)
-            agent 2 - (10,)
-
-            state_shape = (28)
-            actions (5,)
-
-            input o, action2(victm agent) o_next, reward   [list, int, list, int]
-
-            AIRL: input o, it output action 0
-
-            trainsition network: INPUT: o, OUTPUT: o_next, reward
-            reward network
-
-
-            1000000 10^6, 8GB
-            """
-
-
             reward_good[-1] += rew_n[0]
             episode_step += 1
             done = all(done_n)
@@ -456,19 +431,6 @@ def train(arglist):
 
             # increment global step counter
             train_step += 1
-            """
-            # for benchmarking learned policies
-            if arglist.benchmark:
-                for i, info in enumerate(info_n):
-                    agent_info[-1][i].append(info_n['n'])
-                if train_step > arglist.benchmark_iters and (done or terminal):
-                    file_name = arglist.benchmark_dir + arglist.exp_name + '.pkl'
-                    print('Finished benchmarking, now saving...')
-                    with open(file_name, 'wb') as fp:
-                        pickle.dump(agent_info[:-1], fp)
-                    break
-                continue
-            """
 
             # for displaying learned policies
             if arglist.display:
