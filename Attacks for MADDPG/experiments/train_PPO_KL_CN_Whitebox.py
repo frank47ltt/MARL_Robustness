@@ -145,8 +145,6 @@ def train(arglist):
             U.load_state(arglist.load_dir)
 
         
-
-
         episode_rewards = [0.0]  # sum of rewards for all agents
         agent_rewards = [[0.0] for _ in range(env.n)]  # individual agent reward
         final_ep_rewards = []  # sum of rewards for training curve
@@ -297,20 +295,6 @@ def train(arglist):
             # increment global step counter
             train_step += 1
 
-            """
-            # for benchmarking learned policies
-            if arglist.benchmark:
-                for i, info in enumerate(info_n):
-                    agent_info[-1][i].append(info_n['n'])
-                if train_step > arglist.benchmark_iters and (done or terminal):
-                    file_name = arglist.benchmark_dir + arglist.exp_name + '.pkl'
-                    print('Finished benchmarking, now saving...')
-                    with open(file_name, 'wb') as fp:
-                        pickle.dump(agent_info[:-1], fp)
-                    break
-                continue
-            """
-
             # for displaying learned policies
             if arglist.display:
                 time.sleep(0.1)
@@ -341,7 +325,6 @@ def train(arglist):
                     recorded_sum += np.mean(reward_good[-arglist.save_rate:])
                     counter += 1
                     print("Average occupied landmarks {}".format(sum(avg_occ_landmarks) / len(avg_occ_landmarks)))
-
                     
                 else:
                     print("steps: {}, episodes: {}, mean episode reward: {}, agent episode reward: {}, time: {}".format(
@@ -362,7 +345,6 @@ def train(arglist):
                 print("Saving final transitions")
                 print(np.array(transition).shape)
                 np.save('CN_CF_WB_100_train', transition)
-
 
 
                 rew_file_name = arglist.plots_dir + arglist.exp_name + '_rewards.pkl'
