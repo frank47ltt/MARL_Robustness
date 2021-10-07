@@ -30,8 +30,9 @@ Detection Dataset are avaialble in this Google Drive: FIXMEE!!!!!!!!
 
 ## Cooperative Navigation and Physical Deception
 ### Randomly-timed attack & Strategically-timed attack
-- code are available in `./experiments/predicted_agent_0_attacks.py
-(For Joe)
+- code are available in `./experiments/predicted_agent_0_attacks.py`
+
+**(For Joe)**
 
 ### Counterfactual attack & Zero-sum attack
 - packages and dependencies are available in requirements.txt
