@@ -64,3 +64,6 @@ Qmix on STARCRAFT II: https://github.com/deepmind/pysc2
 
 ## Detection Model
 - please follow the "Anomalous behavior detection in c-MARL.pdf" in the folder 
+
+## Appendix
+- Please see Appendix.pdf for more supplmentary details for this paper.
