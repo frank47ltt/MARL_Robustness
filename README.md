@@ -63,4 +63,4 @@ Qmix on STARCRAFT II: https://github.com/deepmind/pysc2
 - other important output info can be found in `runner.py` under function `evaluate()`
 
 ## Detection Model
-- please follow the pdf thesis in the folder 
+- please follow the "Anomalous behavior detection in c-MARL.pdf" in the folder 
