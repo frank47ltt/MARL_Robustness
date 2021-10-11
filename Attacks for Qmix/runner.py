@@ -13,11 +13,6 @@ import matplotlib.pyplot as plt
 from tensorflow import keras
 
 
-"""
-import wandb
-wandb.init(name='Counterfactual - Qmix', project="inverse_glob")
-"""
-
 class Runner:
     def __init__(self, env, args, simu_env):
         self.env = env
