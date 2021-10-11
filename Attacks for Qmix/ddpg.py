@@ -19,8 +19,6 @@ import numpy as np
 import gym
 import time
 
-# import wandb
-# wandb.init(name='DDPG', project="deep-rl-tf2")
 
 #####################  hyper parameters  ####################
 
@@ -169,7 +167,6 @@ def train():
             ep_reward += r
             if j == MAX_EP_STEPS - 1:
                 print('Episode:', i, ' Reward: %i' % int(ep_reward), 'Explore: %.2f' % var, )
-                # wandb.log({'Reward': ep_reward})
                 # if ep_reward > -300:RENDER = True
                 break
     ddpg.save()
