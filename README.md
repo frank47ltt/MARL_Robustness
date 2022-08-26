@@ -1,5 +1,6 @@
 # Multi-Agent-Security
-This is the code for paper Advanced Persistent Threat in Cooperative Multi-Agent Reinforcement Learning. 
+This is the code for paper "Weaponizing Actions in Multi-Agent Reinforcement Learning: Theoretical and
+Empirical Study on Security and Robustness"
 
 **Note**: Environments include requirements.txt file in each folder. 
 
