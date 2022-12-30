@@ -22,6 +22,8 @@ Qmix on STARCRAFT II: https://github.com/deepmind/pysc2
 
 Python version should be 3.6
 
+User should also add multi-agent-particle folder to PYTHONPATH for MADDPG to run successfully
+
 ## Directories Structure
 - `./Attacks for MADDPG/` contains code for all attacks in cooeprative navigation and physical deception
 - `./Attacks for Qmix/` contains code for all attacks in StarCraft II
