@@ -45,7 +45,7 @@ Python version should be 3.6
 - Adv: stands for zero-sum attack
 - all trained weights are availble in corresponding folders
 - For example: if you want to run counterfactual, blackbox, in cooperative navigation, you should type
-`python train_PPO_CF_KL_CN_Blackbox.py --scenario simple_spread`
+`python train_PPO_KL_CN_Blackbox.py --scenario simple_spread`
 - attack rate can be specified by variable `attack_rate`, range from 0 to 1
 - For PPO, please go back to `PPO.py` to change the state dimension
 - 23 for CN (18 + 5)
