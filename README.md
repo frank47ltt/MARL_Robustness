@@ -20,6 +20,8 @@ AIRL: https://github.com/yangmuzhi/airl
 
 Qmix on STARCRAFT II: https://github.com/deepmind/pysc2
 
+Python version should be 3.6
+
 ## Directories Structure
 - `./Attacks for MADDPG/` contains code for all attacks in cooeprative navigation and physical deception
 - `./Attacks for Qmix/` contains code for all attacks in StarCraft II
@@ -43,7 +45,7 @@ Qmix on STARCRAFT II: https://github.com/deepmind/pysc2
 - Adv: stands for zero-sum attack
 - all trained weights are availble in corresponding folders
 - For example: if you want to run counterfactual, blackbox, in cooperative navigation, you should type
-`python train_PPO_CF_KL_CN_blackbox.py --scenario simple_spread`
+`python train_PPO_CF_KL_CN_Blackbox.py --scenario simple_spread`
 - attack rate can be specified by variable `attack_rate`, range from 0 to 1
 - For PPO, please go back to `PPO.py` to change the state dimension
 - 23 for CN (18 + 5)
